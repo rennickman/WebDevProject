@@ -1,0 +1,121 @@
+
+footer {
+    background-color: #101522;
+    margin-top: 20px;
+}
+
+/* Wrapper for everything inside the footer */
+#footerWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 24px;
+}
+
+/* Section with links to different parts of website */
+#footerLinksContainer {
+    display: flex;
+    justify-content: center;
+    padding-top: 32px;
+}
+
+/* Left and right side containers in mobile */
+.linkContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+/* The 4 Groups of Website Links */
+.internalLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    text-align: left;
+    width: 160px;
+    box-sizing: border-box;
+    color: #fff;
+
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+}
+
+/* Title of Each Group of Links */
+.groupHeader {
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+/* Links to other parts of website */
+.groupLink {
+    margin-bottom: 0.5rem;
+    font-size: 16px;
+}
+
+/* Section containing company logo, website rights and social media icons  */
+#socialMediaContainer {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin : 40px auto 0 auto;
+    flex-direction: column;
+}
+
+/* Company logo */
+#companyLogo {
+    color: #fff;
+    justify-self: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+/* Website Rights */
+#websiteRights {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+/* Social Media Icons Section */
+#socialMediaLinks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 240px;
+}
+
+/* Turn Icons White  */
+.socialLogo {
+    filter: invert(100%);
+}
+
+
+/* Set up responsive design */
+@media only screen and (min-width: 420px) {
+    .internalLinks {
+        margin: 16px;
+        width: 160px;
+    }
+}
+
+
+@media only screen and (min-width: 820px) {
+    #footerLinksContainer {
+        padding-top: 0;
+    }
+
+    .linkContainer {
+        flex-direction: row;
+    }
+
+    #socialMediaContainer {
+        flex-direction: row;
+    }
+}
