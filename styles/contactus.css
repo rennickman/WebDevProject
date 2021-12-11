@@ -1,0 +1,228 @@
+#contactSection {
+    margin-top: 10px;
+}
+
+.contactContainer {
+    color: white;
+    padding: 100px 0;
+}
+
+.contactWrapper {
+    display: grid;
+    z-index: 1;
+    height: 860px;
+    width: 100%;
+    max-width: 1100px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 24px;
+    justify-content: center;
+}
+
+.contactGrid1 {
+    display: grid;
+    grid-auto-columns: minmax(auto, 1fr);
+    align-items: center;
+    grid-template-areas: "col1 col1" "col2 col2";
+}
+
+.contactGrid2 {
+    display: grid;
+    grid-auto-columns: minmax(auto, 1fr);
+    align-items: center;
+    grid-template-areas: "col1 col1" "col2 col2";
+}
+
+.firstColumn {
+    margin-bottom: 15px;
+    padding: 0 15px;
+    grid-area: col1;
+}
+
+.secondColumn {
+    margin-bottom: 15px;
+    padding: 0 15px;
+    grid-area: col2;
+}
+
+.contactInfo {
+    max-width: 540px;
+    padding-top: 0;
+    padding-bottom: 60px;
+    text-align: start;
+}
+
+.phoneNum {
+    color: #6397FF;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    margin-bottom: 16px;
+}
+
+.city {
+    margin-bottom: 24px;
+    font-size: 32px;
+    line-height: 1.1;
+    font-weight: 600;
+    color: white;
+}
+
+.desc {
+    max-width: 440px;
+    margin-bottom: 35px;
+    font-size: 18px;
+    line-height: 24px;
+    color: white;
+}
+
+.imgContainer {
+    max-width: 555px;
+    height: 100%;
+}
+
+.contactImage {
+    width: 100%;
+    margin: 0 0 10px 0;
+    padding-right: 0;
+}
+
+.contactButton1 {
+    border-radius: 50px;
+    white-space: nowrap;
+    padding: 12px 30px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: #6397FF;
+    color: #010606;
+}
+
+.contactButton2 {
+    border-radius: 50px;
+    white-space: nowrap;
+    padding: 12px 30px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: #010606;
+    color: white;
+}
+
+.contactButton1:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    background: white;
+}
+
+.contactButton2:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    background: #6397FF;
+}
+
+.linksContainer {
+    height: 1300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #6397FF;
+}
+
+.linksWrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    grid-gap: 16px;
+    padding: 0 20px;
+}
+
+.linkSection {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 10px;
+    max-height: 340px;
+    padding: 30px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.20);
+}
+
+.linkSection:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+.linkImage {
+    height: 160px;
+    width: 160px;
+    margin-bottom: 10px;
+}
+
+#linksTitle {
+    font-size: 2.5rem;
+    color: #010606;
+    margin-bottom: 64px;
+    font-weight: 800;
+}
+
+.linkSectionTitle {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #010606;
+    font-weight: 800;
+}
+
+.linkSectionDesc {
+    font-size: 1rem;
+    text-align: center;
+    color: #010606;
+    font-weight: 400;
+}
+
+
+@media only screen and (min-width: 480px) {
+    .city {
+        font-size: 48px;
+    }
+
+    .linksContainer {
+        height: 1100px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .contactContainer {
+        padding: 0;
+    }
+
+    .contactGrid1 {
+        grid-template-areas: "col1 col2";
+    }
+
+    .contactGrid2 {
+        grid-template-areas: "col2 col1";
+    }
+
+    .linksContainer {
+        height: 800px;
+    }
+
+    .linksWrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .linksWrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 0 20px;
+    }
+}
