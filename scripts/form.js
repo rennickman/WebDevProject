@@ -81,17 +81,33 @@ personalNextButton.addEventListener("click", e => {
     // Prevent refresh
     e.preventDefault();
 
-    // Set Value of Personal Info Global Vars
-    firstNameValue = firstNameInput.value;
-    surnameValue = surnameInput.value;
-    emailValue = emailInput.value;
-    locationValue = locationInput.value;
+    // Check all Inputs have been completed
+    if (firstNameInput.value && surnameInput.value && emailInput.value && locationInput.value) {
 
-    // Hide Personal Info Form
-    personalFormSection.style.display = "none";
+        // Check email is valid
+        if (emailInput.value.includes("@")) {
 
-    // Display Pet Info Form
-    petInfoFormSection.style.display = "flex";
+        // Set Value of Personal Info Global Vars
+        firstNameValue = firstNameInput.value;
+        surnameValue = surnameInput.value;
+        emailValue = emailInput.value;
+        locationValue = locationInput.value;
+
+        // Hide Personal Info Form
+        personalFormSection.style.display = "none";
+
+        // Display Pet Info Form
+        petInfoFormSection.style.display = "flex";
+
+        } else {
+            // Throw alert if email is not valid
+            alert("Please enter valid email address");
+        }
+
+    } else {
+        // Throw Alert if all Inputs haven't been completed
+        alert("Please complete all fields");
+    }
 });
 
 
@@ -101,17 +117,25 @@ petInfoNextButton.addEventListener("click", e => {
     // Prevent refresh
     e.preventDefault();
 
-    // Create a Pet
-    let newPet = createAPet();
+    // Check all Inputs have been completed
+    if (petNameInput.value && petTypeInput.value && breedInput.value) {
 
-    // Add to Array of Pets
-    arrayOfPets.push(newPet);
+        // Create a Pet
+        let newPet = createAPet();
 
-    // Hide Pet Info Form
-    petInfoFormSection.style.display = "none";
+        // Add to Array of Pets
+        arrayOfPets.push(newPet);
 
-    // Display Booking Info Form
-    bookingInfoFormSection.style.display = "flex";
+        // Hide Pet Info Form
+        petInfoFormSection.style.display = "none";
+
+        // Display Booking Info Form
+        bookingInfoFormSection.style.display = "flex";
+
+    } else {
+        // Throw Alert if all Inputs haven't been completed
+        alert("Please complete all required fields");
+    }
 });
 
 
@@ -120,20 +144,28 @@ addAnotherPetButton.addEventListener("click", e => {
     // Prevent refresh
     e.preventDefault();
 
-    // Create a Pet
-    let newPet = createAPet();
+    // Check all Inputs have been completed
+    if (petNameInput.value && petTypeInput.value && breedInput.value) {
 
-    // Add to Array of Pets
-    arrayOfPets.push(newPet);
+        // Create a Pet
+        let newPet = createAPet();
 
-    // Reset Inputs
-    petNameInput.value = "";
-    petTypeInput.value = "";
-    breedInput.value = "";
-    petCommentsInput.value = "";
+        // Add to Array of Pets
+        arrayOfPets.push(newPet);
 
-    // Update Pet Info Title HTML
-    petInfoTitleHtml.innerHTML = `Pet #${arrayOfPets.length + 1} Info`;
+        // Reset Inputs
+        petNameInput.value = "";
+        petTypeInput.value = "";
+        breedInput.value = "";
+        petCommentsInput.value = "";
+
+        // Update Pet Info Title HTML
+        petInfoTitleHtml.innerHTML = `Pet #${arrayOfPets.length + 1} Info`;
+
+    } else {
+        // Throw Alert if all Inputs haven't been completed
+        alert("Please complete all required fields");
+    }
 });
 
 
@@ -142,24 +174,32 @@ finishButton.addEventListener("click", e => {
     // Prevent refresh
     e.preventDefault();
 
-    // Set Value of Personal Info Global Vars
-    startDateValue = startDateInput.value;
-    numDaysValue = numDaysInput.value;
-    reasonValue = reasonInput.value;
-    bookingCommentValue = bookingCommentInput.value;
+    // Check all Inputs have been completed
+    if (startDateInput.value && numDaysInput.value && reasonInput.value) {
 
-    // Set values of Confirmation Form HTML
-    confirmNameHtml.innerHTML = firstNameValue + " " + surnameValue;
-    confirmEmailHtml.innerHTML = emailValue;
-    confirmStartHtml.innerHTML = startDateValue;
-    confirmDaysHtml.innerHTML = numDaysValue;
-    confirmPetsHtml.innerHTML = arrayOfPets.length;
+        // Set Value of Personal Info Global Vars
+        startDateValue = startDateInput.value;
+        numDaysValue = numDaysInput.value;
+        reasonValue = reasonInput.value;
+        bookingCommentValue = bookingCommentInput.value;
 
-    // Hide Booking Info Form
-    bookingInfoFormSection.style.display = "none";
+        // Set values of Confirmation Form HTML
+        confirmNameHtml.innerHTML = firstNameValue + " " + surnameValue;
+        confirmEmailHtml.innerHTML = emailValue;
+        confirmStartHtml.innerHTML = startDateValue;
+        confirmDaysHtml.innerHTML = numDaysValue;
+        confirmPetsHtml.innerHTML = arrayOfPets.length;
 
-    // Display Confirmation Form
-    confirmationFormSection.style.display = "flex";
+        // Hide Booking Info Form
+        bookingInfoFormSection.style.display = "none";
+
+        // Display Confirmation Form
+        confirmationFormSection.style.display = "flex";
+
+    } else {
+        // Throw Alert if all Inputs haven't been completed
+        alert("Please complete all required fields");
+    }
 });
 
 

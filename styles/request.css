@@ -68,6 +68,11 @@
     cursor: pointer;
 }
 
+.topButton:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
 .bottomButton {
     width: 60%;
     align-self: center;
@@ -79,6 +84,11 @@
     font-size: 20px;
     font-weight: 500;
     cursor: pointer;
+}
+
+.bottomButton:hover {
+    cursor: pointer;
+    transform: scale(1.02);
 }
 
 .confirmation {
