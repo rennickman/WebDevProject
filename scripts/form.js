@@ -24,15 +24,24 @@ const addAnotherPetButton = document.getElementById("addAnotherPetButton");
 
 const finishButton = document.getElementById("finishButton");
 
+const confirmButton = document.getElementById("confirmButton");
+
 
 // HTML Elements
 const petInfoTitleHtml = document.getElementById("petInfoTitle");
+
+const confirmNameHtml = document.getElementById("confirmName");
+const confirmEmailHtml = document.getElementById("confirmEmail");
+const confirmStartHtml = document.getElementById("confirmStart");
+const confirmDaysHtml = document.getElementById("confirmDays");
+const confirmPetsHtml = document.getElementById("confirmPets");
 
 
 // Form Containers
 const personalFormSection = document.getElementById("personalFormSection");
 const petInfoFormSection = document.getElementById("petInfoFormSection");
 const bookingInfoFormSection = document.getElementById("bookingInfoFormSection");
+const confirmationFormSection = document.getElementById("confirmationFormSection");
 
 
 // Global Variables
@@ -139,9 +148,33 @@ finishButton.addEventListener("click", e => {
     reasonValue = reasonInput.value;
     bookingCommentValue = bookingCommentInput.value;
 
-    console.log(startDateValue);
-    console.log(numDaysValue);
-    console.log(reasonValue);
-    console.log(bookingCommentValue);
+    // Set values of Confirmation Form HTML
+    confirmNameHtml.innerHTML = firstNameValue + " " + surnameValue;
+    confirmEmailHtml.innerHTML = emailValue;
+    confirmStartHtml.innerHTML = startDateValue;
+    confirmDaysHtml.innerHTML = numDaysValue;
+    confirmPetsHtml.innerHTML = arrayOfPets.length;
+
+    // Hide Booking Info Form
+    bookingInfoFormSection.style.display = "none";
+
+    // Display Confirmation Form
+    confirmationFormSection.style.display = "flex";
 });
+
+
+
+confirmButton.addEventListener("click", e => {
+    // Prevent Refresh
+    e.preventDefault();
+
+    // Throw confirmation Alert
+    alert("Your'e booking has been confirmed");
+
+    // Direct to Homepage
+    window.location.href = './index.html';
+});
+
+
+
 
