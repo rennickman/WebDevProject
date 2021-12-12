@@ -133,6 +133,10 @@
     background: #6397FF;
 }
 
+.linksContainer a {
+    text-decoration: none;
+}
+
 .linksWrapper {
     max-width: 1000px;
     margin: 0 auto;
